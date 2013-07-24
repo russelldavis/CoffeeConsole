@@ -1,0 +1,14 @@
+{
+	"name": "CoffeeConsole",
+	"description": "A CoffeeScript console.",
+	"version": "0.1",
+	"keywords": ["CoffeeScript", "console"],
+	"main": "coffee-console.html",
+	"window": {
+		"title": "CoffeeScript Console",
+		"toolbar": false,
+		"icon": "badge.png",
+		"width": 800,
+		"height": 500
+	}
+}

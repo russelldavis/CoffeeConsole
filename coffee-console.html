@@ -63,7 +63,6 @@
 <script src="ace/mode-javascript-noconflict.js" type="text/javascript" charset="utf-8"></script>
 <script src="ace/theme-twilight-noconflict.js" type="text/javascript" charset="utf-8"></script>
 <script>
-var tabId = chrome.devtools.inspectedWindow.tabId;
 var err = document.getElementById('error');
 var editor = ace.edit("cc-editor");
 editor.setTheme("ace/theme/twilight");
@@ -80,8 +79,8 @@ compiled.session.setTabSize(2);
 compiled.setShowPrintMargin(false);
 
 
-function compileIt(){
-    chrome.devtools.inspectedWindow.eval( compiled.session.getValue(), function(result, isException) {});
+function runIt(){
+    eval(compiled.session.getValue());
 }
 
 function update(){
@@ -93,7 +92,7 @@ function update(){
         err.className = '';
         err.innerHTML = error.message;
     }
-    localStorage.setItem("state" + tabId, editor.session.getValue());
+    localStorage.setItem("state", editor.session.getValue());
 }
 
 schedule = function(fn, timeout) {
@@ -106,16 +105,16 @@ editor.on("change", function(e){
 });
 
 var compileOptions = {
-    name: "compileIt",
-    exec: compileIt,
+    name: "runIt",
+    exec: runIt,
     bindKey: "Ctrl-Return|Command-Return|Shift-Return"
 };
 
 editor.commands.addCommand(compileOptions);
 compiled.commands.addCommand(compileOptions);
 
-document.getElementById('runcc').addEventListener('click', compileIt);
-editor.session.setValue(localStorage.getItem("state" + tabId));
+document.getElementById('runcc').addEventListener('click', runIt);
+editor.session.setValue(localStorage.getItem("state"));
 schedule(function(){ editor.focus() }, 20);
 
 </script>
