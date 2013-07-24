@@ -1,6 +1,6 @@
 CoffeeConsoleApp
 
-A standalone version of [CoffeeConsole](https://github.com/snookca/CoffeeConsole)
+A standalone version of [CoffeeConsole](https://github.com/snookca/CoffeeConsole). Runs via [node-webkit](https://github.com/rogerwang/node-webkit).
 
 Features
 
