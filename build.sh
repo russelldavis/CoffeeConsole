@@ -10,3 +10,5 @@ mkdir "$tmp_app_dir"
 git ls-tree --name-only HEAD | xargs -I {} cp -R {} "$tmp_app_dir"
 rm -rf "$app_dir"
 mv "$tmp_app_dir" "$app_dir"
+
+cp Info.plist releases/CoffeeConsole.app/Contents/

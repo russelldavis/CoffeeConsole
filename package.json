@@ -5,10 +5,10 @@
 	"keywords": ["CoffeeScript", "console"],
 	"main": "coffee-console.html",
 	"window": {
-		"title": "CoffeeScript Console",
+		"title": "Coffee Console",
 		"toolbar": false,
 		"icon": "badge.png",
-		"width": 800,
-		"height": 500
+		"width": 1440,
+		"height": 768
 	}
 }
